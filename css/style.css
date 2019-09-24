@@ -1,0 +1,126 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 8vh;
+    background-color: #5d4954;
+    font-family: 'Cinzel', serif;
+}
+
+nav a {
+    color: #dddddd;
+    text-decoration: none;
+    cursor: pointer;
+
+}
+
+.logo {
+    text-transform: uppercase;
+    letter-spacing: 0.4rem;
+    font-size: 2rem;
+}
+
+.nav-list {
+    width: 30%;
+    justify-self: flex-end;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    list-style-type: none;
+}
+
+.nav-list a {
+    font-size: 1.2rem;
+    letter-spacing: 0.1rem;
+}
+
+.burger {
+    display: none;
+}
+
+.burger div {
+    width: 25px;
+    height: 5px;
+    cursor: pointer;
+    background-color: #dddddd;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+/* large tablets */
+@media screen and (max-width: 1024px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    .burger {
+        display: block;
+    }
+
+    .nav-list {
+        position: absolute;
+        right: 0;
+        height: 92vh;
+        top: 8vh;
+        background-color: #5d4954;
+        flex-direction: column;
+        align-items: center;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+    }
+
+    .nav-list li {
+        opacity: 1;
+    }
+
+    .nav-list a {
+        font-size: 1.5rem;
+    }
+}
+
+/* tablets */
+@media screen and (max-width: 768px) {
+    .nav-list a {
+        font-size: 1.1rem;
+    }
+}
+
+/* smartphones */
+@media screen and (max-width: 500px) {
+    .nav-list a {
+        font-size: 1rem;
+    }
+}
+
+.nav-list-toggle {
+    transform: translateX(0%);
+}
+
+@keyframes nav-list-fade {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+.flip-burger-line .line-1 {
+    transform: rotate(-45deg) translate(-8px, 6px);
+}
+
+.flip-burger-line .line-2 {
+    opacity: 0;
+}
+
+.flip-burger-line .line-3 {
+    transform: rotate(45deg) translate(-8px, -6px);
+}
